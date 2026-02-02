@@ -11,8 +11,12 @@ const Todo = ({ todo, removeTodo, completeTodo }) => {
         <p className="category">({todo.category})</p>
       </div>
       <div>
-        <button className="complete" onClick={() => completeTodo(todo.id)}>
-          {/* Completar */}
+        <button
+          className="complete"
+          onClick={() => completeTodo(todo.id)}
+          style={{ backgroundColor: todo.isCompleted ? "#6c757d" : "#28a745" }}
+        >
+          {todo.isCompleted ? "Desfazer" : "Completar"}
         </button>
         <button className="remove" onClick={() => removeTodo(todo.id)}>
           X
